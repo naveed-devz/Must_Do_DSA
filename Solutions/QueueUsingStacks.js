@@ -29,7 +29,7 @@ const result = [];
 for (const query of queries) {
     if (query === 1) {
         // Push operation
-        const element = /* Read input for x */;
+        const element = /* Read input for x */
         queue.push(element);
     } else if (query === 2) {
         // Pop operation
