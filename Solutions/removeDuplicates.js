@@ -31,3 +31,4 @@ function dup1(arr){
 
 }
 console.log(dup1(arr1))
+
