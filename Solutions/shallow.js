@@ -1,19 +1,13 @@
-let person = {
+// shallow copy creates a new object , but only copoies the top level properties
+const original = {
     name:"naveed",
-    email:"naveed@gmail.com",
-    age:25
+    address:{
+        city:"chittoor11"
+    }
 }
 
+const copy = {...original};
 
-// shallow copy 
-
-let shallowCopy = Object.assign({},person);
-shallowCopy.age=30
-
-console.log(person)
-console.log(shallowCopy)
-
-let deepCopy = JSON.parse(JSON.stringify(person));
-deepCopy.age=40;
-console.log(person)
-console.log(deepCopy)
+copy.name = "shaik",
+copy.address.city = "chittoor"
+console.log(copy);
