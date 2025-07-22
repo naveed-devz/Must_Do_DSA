@@ -1,16 +1,22 @@
-function compress (s) {
-    let result = ""
-    let count = 1
-    for(let i=1;i<=s.length;i++){
-        if(s[i] === s[i-1]){
-            count++
-        }
-        else{
-            result += count+s[i-1]
-            count = 1
-        }
-    }
-    return result;
-}
+function sumofUnsorted(arr, target) {
+  let newArr = arr.map((value, index) => ({ value, index }));
+  newArr.sort((a, b) => a.value - b.value);
+  let left = 0;
+  let right = newArr.length - 1;
 
-console.log(compress("aaanbbbs"))
+  while (left < right) {
+    let sum = newArr[left].value + newArr[right].value;
+    if (sum === target) {
+      return [newArr[left].index, newArr[right].index];
+    } else if (sum < target) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return [];
+}
+const arr = [4, 1, 9, 7],
+  target = 10;
+
+console.log(sumofUnsorted(arr, target));
