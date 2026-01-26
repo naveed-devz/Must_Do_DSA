@@ -31,7 +31,7 @@ const obj2 = {
     lName:"Doe"
 }
 
-// obj.getFullName.call(obj2);
-// obj.getFullName.apply(obj2,["chittoor", "AP"])
+obj.getFullName.call(obj2);
+obj.getFullName.apply(obj2,["chittoor", "AP"])
 const bindMethod = obj.getFullName.bind(obj2, "chittoor", "Ap")
 bindMethod();

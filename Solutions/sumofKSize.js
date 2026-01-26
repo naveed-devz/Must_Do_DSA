@@ -9,20 +9,29 @@ let k =3;
  **/
 // ans = 5 1 3
 
-function windowSum (arr,k){
-let maxSum = 0;
-let windowSum = 0;
-// find first inital window sum
-for (let i=0;i<k;i++){
-    windowSum += arr[i]
+function windowSum(arr, k) {
+  let windowSum = 0;
+  let maxSum = 0;
+
+  // 1️⃣ initial window sum
+  for (let i = 0; i < k; i++) {
+    windowSum += arr[i];
+  }
+
+  // IMPORTANT: set initial max
+  maxSum = windowSum;
+
+  // 2️⃣ slide the window
+  for (let i = k; i < arr.length; i++) {
+    windowSum += arr[i] - arr[i - k];
+    maxSum = Math.max(maxSum, windowSum);
+  }
+
+  return maxSum;
 }
-for(let i = k;i<arr.length;i++){
-    windowSum += arr[i] -arr[i-k];
-    maxSum = Math.max(maxSum, windowSum)
-}
-return maxSum;
-}
-console.log(windowSum(arr,k));
+
+console.log(windowSum(arr, k));
+
 
 // first keep the sum =0; windowsum=0
 // since we are using window here make the sum of the intial window
