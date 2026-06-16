@@ -45,8 +45,6 @@ function duplicates(arr){
                 count++
                 return true
             }
-
-
         }
         // console.log(count)
         if(count==0){
@@ -56,7 +54,7 @@ function duplicates(arr){
     return false
 }
 
-let arr =  [1,2,3]
+let arr =  [1,2,3,3]
 console.log(duplicates(arr))
 
 
