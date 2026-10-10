@@ -8,7 +8,7 @@ function longestSubstr(str){
             seen.delete(s[left])
             left++
         }
-        seen.add(s[riight])
+        seen.add(s[right])
         maxLen = Math.max(maxLen,right-left+1)
     }
     return maxLen;    
